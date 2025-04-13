@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color: #eba4a4;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;  
+    }
+    .container{
+        background-color: rgb(150, 146, 165);
+        display: flex;   
+        border-radius: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    }
+    input {
+        display: block;
+        width: 200px;
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid #9a7a7a;
+        border-radius: 5px;
+    }
+    button {
+        background-color: #bb3fe4;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #16da08;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+    
+    } 
+    #result {
+        font-size: 20px;
+        color: #d6e31f;
+        font-weight: bold;
+    }
+    h1 {
+        color: #c22e2e;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>💏LOVE CALCULATOR🧑🏻‍❤️‍💋‍👩🏻</h1>
+        <input type="text"  id="name1" placeholder="Enter your name"><br><br>
+        <input type="text" id="name2" placeholder="Enter your partner name"><br><br>
+        <button onclick="calculateLove()">Look Your percentage of 💏LOVE Here</button>
+        <p id="result"></p>
+        </div>
+    <script>
+    function calculateLove(){
+        var name1 = document.getElementById("name1").value;
+        var name2 = document.getElementById("name2").value;
+        var loveScore = Math.random() * 100;
+        loveScore = Math.floor(loveScore) + 1;
+
+        var result = document.getElementById("result");
+        result.innerHTML = "Love score between " + name1 + " ❤️ " + name2 + " is: " + loveScore + "%";                 
+    }
+    const loceScore = Math.floor(Math.random() * 100+1);
+    </script>
+</body>
+</html>

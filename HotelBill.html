@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Hotel Bill Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .container { max-width: 500px; margin: auto; }
+    table { width: 100%; margin-top: 10px; border-collapse: collapse; }
+    td, th { padding: 10px; border: 1px solid #ccc; text-align: left; }
+    input { width: 60px; }
+    #total { font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Food Hotel Bill Calculator</h2>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Price (₹)</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>Pizza</td>
+        <td>₹200</td>
+        <td><input type="number" id="qty1" min="0" value="0"></td>
+      </tr>
+      <tr>
+        <td>Burger</td>
+        <td>₹100</td>
+        <td><input type="number" id="qty2" min="0" value="0"></td>
+      </tr>
+      <tr>
+        <td>Pasta</td>
+        <td>₹150</td>
+        <td><input type="number" id="qty3" min="0" value="0"></td>
+      </tr>
+      <tr>
+        <td>Cold Drink</td>
+        <td>₹50</td>
+        <td><input type="number" id="qty4" min="0" value="0"></td>
+      </tr>
+    </table>
+    
+    <button onclick="calculateBill()" style="margin-top: 15px;">Calculate Bill</button>
+    
+    <div id="total"></div>
+  </div>
+
+  <script>
+    function calculateBill() {
+      const prices = [200, 100, 150, 50];
+      const qty1 = parseInt(document.getElementById('qty1').value) || 0;
+      const qty2 = parseInt(document.getElementById('qty2').value) || 0;
+      const qty3 = parseInt(document.getElementById('qty3').value) || 0;
+      const qty4 = parseInt(document.getElementById('qty4').value) || 0;
+
+      const total = (qty1 * prices[0]) + (qty2 * prices[1]) +
+                    (qty3 * prices[2]) + (qty4 * prices[3]);
+
+      const tax = total * 0.05; // 5% tax
+      const finalTotal = total + tax;
+
+      document.getElementById('total').innerHTML = `
+        Subtotal: ₹${total.toFixed(2)} <br>
+        Tax (5%): ₹${tax.toFixed(2)} <br>
+        <strong>Total Amount: ₹${finalTotal.toFixed(2)}</strong>
+      `;
+    }
+  </script>
+</body>
+</html>

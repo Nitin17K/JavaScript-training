@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel management</title>
+</head>
+<body>
+    <h1>Hotel Management</h1>
+    <h2>Food Bill Calculator</h2>
+    <div class="container">
+            <label for="">Idli :30 <input type="number" id="idli" min="0" value="0"></label><br>
+            <label for=""> Vade :15 <input type="number" id="vade" min="0" value="0"></label><br>
+            <label for=""> Dosa :50 <input type="number" id="dosa" min="0" value="0"></label><br>
+            <label for=""> Bisibelebath :40 <input type="number" id="bisibelebath" min="0" value="0"></label><br>
+            <label for=""> Mosaranna :30 <input type="number" id="mosaranna" min="0" value="0"></label><br>
+            <label for=""> Omlet :30 <input type="number" id="omlet" min="0" value="0"></label><br>
+        
+            <button onclick="bill()">Bill</button>
+ 
+            <p id="total"> Your bill is</p>
+    </div>
+    <script>
+        function bill() {
+            var idli=parseInt(document.getElementById("idli").value)*30;
+            var value=parseInt(document.getElementById("vade").value)*15;
+            var dosa=parseInt(document.getElementById("dosa").value)*50;
+            var bisibelebath=parseInt(document.getElementById("bisibelebath").value)*40;
+            var mosaranna=parseInt(document.getElementById("mosaranna").value)*30;
+            var omlet=parseInt(document.getElementById("omlet").value)*30;
+            var total= idli + dosa + vade + bisibelebath + mosaranna + omlet
+
+            var bill = document.getElementById("total");    
+        bill.innerHTML = "Total bill is: "+total;
+}
+    </script>
+
+</body>
+</html> 
